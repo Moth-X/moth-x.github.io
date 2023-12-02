@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>PySimpleGui主要元素 | FengFeng的Wiki</title>
+    
+    
+        <meta name="keywords" content="PySimpleGui主要元素" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="以Demo程序Demo_All_Elements_Simple.py，我们可以快速认识PySimpleGUI中的主要元素。   Python代码 - Demo - Element List  12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PySimpleGui主要元素">
+<meta property="og:url" content="http://moth-x.github.io/wiki/PySimpleGui%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/index.html">
+<meta property="og:site_name" content="FengFeng的Wiki">
+<meta property="og:description" content="以Demo程序Demo_All_Elements_Simple.py，我们可以快速认识PySimpleGUI中的主要元素。   Python代码 - Demo - Element List  12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://moth-x.github.io/images/Demo_All_Elements_Simple.png">
+<meta property="article:published_time" content="2023-12-02T14:54:03.000Z">
+<meta property="article:modified_time" content="2023-12-02T15:30:47.373Z">
+<meta property="article:author" content="FengFeng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://moth-x.github.io/images/Demo_All_Elements_Simple.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="FengFeng的Wiki" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/images/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">FengFeng的Wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>分类</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Python修炼道
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            PySimpleGui—简易GUI构建
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/PySimpleGui%E7%AE%80%E4%BB%8B/">PySimpleGui简介</a></li>  <li class="file active"><a href="/wiki/PySimpleGui%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/">PySimpleGui主要元素</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/Python%E4%B9%8B%E7%A6%85/">Python之禅</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            传送门
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/%E8%BD%AF%E4%BB%B6%E5%8F%8A%E5%B7%A5%E5%85%B7/">软件及工具</a></li>  <li class="file"><a href="/wiki/Office%E6%A8%A1%E6%9D%BF/">Office模板</a></li>  <li class="file"><a href="/wiki/Overleaf%E6%A8%A1%E6%9D%BF/">Overleaf模板</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/Welcome/">Welcome</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-PySimpleGui主要元素" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Python%E4%BF%AE%E7%82%BC%E9%81%93/">Python修炼道</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Python%E4%BF%AE%E7%82%BC%E9%81%93/PySimpleGui%E2%80%94%E7%AE%80%E6%98%93GUI%E6%9E%84%E5%BB%BA/">PySimpleGui—简易GUI构建</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/PySimpleGui%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/">
+            <time datetime="2023-12-02T14:54:03.000Z" itemprop="datePublished">2023-12-02</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/FengFeng/Wiki-site/raw/writing/source/_posts/PySimpleGui主要元素.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/FengFeng/Wiki-site/edit/writing/source/_posts/PySimpleGui主要元素.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/FengFeng/Wiki-site/commits/writing/source/_posts/PySimpleGui主要元素.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            PySimpleGui主要元素
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">文章目录</strong>
+                    
+                </div>
+            
+        
+        
+            <p>以Demo程序<a target="_blank" rel="noopener" href="https://github.com/PySimpleGUI/PySimpleGUI/blob/master/DemoPrograms/Demo_All_Elements_Simple.py">Demo_All_Elements_Simple.py</a>，我们可以快速认识PySimpleGUI中的主要元素。</p>
+<p><img src="/../images/Demo_All_Elements_Simple.png"></p>
+<details>
+<summary>Python代码 - Demo - Element List</summary>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> PySimpleGUI <span class="keyword">as</span> sg</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Demo - Element List</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    All elements shown in 1 window as simply as possible.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Copyright 2022 PySimpleGUI</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">use_custom_titlebar = <span class="literal">True</span> <span class="keyword">if</span> sg.running_trinket() <span class="keyword">else</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">make_window</span>(<span class="params">theme=<span class="literal">None</span></span>):</span><br><span class="line"></span><br><span class="line">    NAME_SIZE = <span class="number">23</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">name</span>(<span class="params">name</span>):</span><br><span class="line">        dots = NAME_SIZE-<span class="built_in">len</span>(name)-<span class="number">2</span></span><br><span class="line">        <span class="keyword">return</span> sg.Text(name + <span class="string">&#x27; &#x27;</span> + <span class="string">&#x27;•&#x27;</span>*dots, size=(NAME_SIZE,<span class="number">1</span>), justification=<span class="string">&#x27;r&#x27;</span>,pad=(<span class="number">0</span>,<span class="number">0</span>), font=<span class="string">&#x27;Courier 10&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    sg.theme(theme)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># NOTE that we&#x27;re using our own LOCAL Menu element</span></span><br><span class="line">    <span class="keyword">if</span> use_custom_titlebar:</span><br><span class="line">        Menu = sg.MenubarCustom</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        Menu = sg.Menu</span><br><span class="line"></span><br><span class="line">    treedata = sg.TreeData()</span><br><span class="line"></span><br><span class="line">    treedata.Insert(<span class="string">&quot;&quot;</span>, <span class="string">&#x27;_A_&#x27;</span>, <span class="string">&#x27;Tree Item 1&#x27;</span>, [<span class="number">1234</span>], )</span><br><span class="line">    treedata.Insert(<span class="string">&quot;&quot;</span>, <span class="string">&#x27;_B_&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, [])</span><br><span class="line">    treedata.Insert(<span class="string">&quot;_A_&quot;</span>, <span class="string">&#x27;_A1_&#x27;</span>, <span class="string">&#x27;Sub Item 1&#x27;</span>, [<span class="string">&#x27;can&#x27;</span>, <span class="string">&#x27;be&#x27;</span>, <span class="string">&#x27;anything&#x27;</span>], )</span><br><span class="line"></span><br><span class="line">    layout_l = [</span><br><span class="line">                [name(<span class="string">&#x27;Text&#x27;</span>), sg.Text(<span class="string">&#x27;Text&#x27;</span>)],</span><br><span class="line">                [name(<span class="string">&#x27;Input&#x27;</span>), sg.Input(s=<span class="number">15</span>)],</span><br><span class="line">                [name(<span class="string">&#x27;Multiline&#x27;</span>), sg.Multiline(s=(<span class="number">15</span>,<span class="number">2</span>))],</span><br><span class="line">                [name(<span class="string">&#x27;Output&#x27;</span>), sg.Output(s=(<span class="number">15</span>,<span class="number">2</span>))],</span><br><span class="line">                [name(<span class="string">&#x27;Combo&#x27;</span>), sg.Combo(sg.theme_list(), default_value=sg.theme(), s=(<span class="number">15</span>,<span class="number">22</span>), enable_events=<span class="literal">True</span>, readonly=<span class="literal">True</span>, k=<span class="string">&#x27;-COMBO-&#x27;</span>)],</span><br><span class="line">                [name(<span class="string">&#x27;OptionMenu&#x27;</span>), sg.OptionMenu([<span class="string">&#x27;OptionMenu&#x27;</span>,],s=(<span class="number">15</span>,<span class="number">2</span>))],</span><br><span class="line">                [name(<span class="string">&#x27;Checkbox&#x27;</span>), sg.Checkbox(<span class="string">&#x27;Checkbox&#x27;</span>)],</span><br><span class="line">                [name(<span class="string">&#x27;Radio&#x27;</span>), sg.Radio(<span class="string">&#x27;Radio&#x27;</span>, <span class="number">1</span>)],</span><br><span class="line">                [name(<span class="string">&#x27;Spin&#x27;</span>), sg.Spin([<span class="string">&#x27;Spin&#x27;</span>,], s=(<span class="number">15</span>,<span class="number">2</span>))],</span><br><span class="line">                [name(<span class="string">&#x27;Button&#x27;</span>), sg.Button(<span class="string">&#x27;Button&#x27;</span>)],</span><br><span class="line">                [name(<span class="string">&#x27;ButtonMenu&#x27;</span>), sg.ButtonMenu(<span class="string">&#x27;ButtonMenu&#x27;</span>, sg.MENU_RIGHT_CLICK_EDITME_EXIT)],</span><br><span class="line">                [name(<span class="string">&#x27;Slider&#x27;</span>), sg.Slider((<span class="number">0</span>,<span class="number">10</span>), orientation=<span class="string">&#x27;h&#x27;</span>, s=(<span class="number">10</span>,<span class="number">15</span>))],</span><br><span class="line">                [name(<span class="string">&#x27;Listbox&#x27;</span>), sg.Listbox([<span class="string">&#x27;Listbox&#x27;</span>, <span class="string">&#x27;Listbox 2&#x27;</span>], no_scrollbar=<span class="literal">True</span>,  s=(<span class="number">15</span>,<span class="number">2</span>))],</span><br><span class="line">                [name(<span class="string">&#x27;Image&#x27;</span>), sg.Image(sg.EMOJI_BASE64_HAPPY_THUMBS_UP)],</span><br><span class="line">                [name(<span class="string">&#x27;Graph&#x27;</span>), sg.Graph((<span class="number">125</span>, <span class="number">50</span>), (<span class="number">0</span>,<span class="number">0</span>), (<span class="number">125</span>,<span class="number">50</span>), k=<span class="string">&#x27;-GRAPH-&#x27;</span>)]  ]</span><br><span class="line"></span><br><span class="line">    layout_r  = [[name(<span class="string">&#x27;Canvas&#x27;</span>), sg.Canvas(background_color=sg.theme_button_color()[<span class="number">1</span>], size=(<span class="number">125</span>,<span class="number">40</span>))],</span><br><span class="line">                [name(<span class="string">&#x27;ProgressBar&#x27;</span>), sg.ProgressBar(<span class="number">100</span>, orientation=<span class="string">&#x27;h&#x27;</span>, s=(<span class="number">10</span>,<span class="number">20</span>), k=<span class="string">&#x27;-PBAR-&#x27;</span>)],</span><br><span class="line">                [name(<span class="string">&#x27;Table&#x27;</span>), sg.Table([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]], [<span class="string">&#x27;Col 1&#x27;</span>,<span class="string">&#x27;Col 2&#x27;</span>,<span class="string">&#x27;Col 3&#x27;</span>], num_rows=<span class="number">2</span>)],</span><br><span class="line">                [name(<span class="string">&#x27;Tree&#x27;</span>), sg.Tree(treedata, [<span class="string">&#x27;Heading&#x27;</span>,], num_rows=<span class="number">3</span>)],</span><br><span class="line">                [name(<span class="string">&#x27;Horizontal Separator&#x27;</span>), sg.HSep()],</span><br><span class="line">                [name(<span class="string">&#x27;Vertical Separator&#x27;</span>), sg.VSep()],</span><br><span class="line">                [name(<span class="string">&#x27;Frame&#x27;</span>), sg.Frame(<span class="string">&#x27;Frame&#x27;</span>, [[sg.T(s=<span class="number">15</span>)]])],</span><br><span class="line">                [name(<span class="string">&#x27;Column&#x27;</span>), sg.Column([[sg.T(s=<span class="number">15</span>)]])],</span><br><span class="line">                [name(<span class="string">&#x27;Tab, TabGroup&#x27;</span>), sg.TabGroup([[sg.Tab(<span class="string">&#x27;Tab1&#x27;</span>,[[sg.T(s=(<span class="number">15</span>,<span class="number">2</span>))]]), sg.Tab(<span class="string">&#x27;Tab2&#x27;</span>, [[]])]])],</span><br><span class="line">                [name(<span class="string">&#x27;Pane&#x27;</span>), sg.Pane([sg.Col([[sg.T(<span class="string">&#x27;Pane 1&#x27;</span>)]]), sg.Col([[sg.T(<span class="string">&#x27;Pane 2&#x27;</span>)]])])],</span><br><span class="line">                [name(<span class="string">&#x27;Push&#x27;</span>), sg.Push(), sg.T(<span class="string">&#x27;Pushed over&#x27;</span>)],</span><br><span class="line">                [name(<span class="string">&#x27;VPush&#x27;</span>), sg.VPush()],</span><br><span class="line">                [name(<span class="string">&#x27;Sizer&#x27;</span>), sg.Sizer(<span class="number">1</span>,<span class="number">1</span>)],</span><br><span class="line">                [name(<span class="string">&#x27;StatusBar&#x27;</span>), sg.StatusBar(<span class="string">&#x27;StatusBar&#x27;</span>)],</span><br><span class="line">                [name(<span class="string">&#x27;Sizegrip&#x27;</span>), sg.Sizegrip()]  ]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Note - LOCAL Menu element is used (see about for how that&#x27;s defined)</span></span><br><span class="line">    layout = [[Menu([[<span class="string">&#x27;File&#x27;</span>, [<span class="string">&#x27;Exit&#x27;</span>]], [<span class="string">&#x27;Edit&#x27;</span>, [<span class="string">&#x27;Edit Me&#x27;</span>, ]]],  k=<span class="string">&#x27;-CUST MENUBAR-&#x27;</span>,p=<span class="number">0</span>)],</span><br><span class="line">              [sg.T(<span class="string">&#x27;PySimpleGUI Elements - Use Combo to Change Themes&#x27;</span>, font=<span class="string">&#x27;_ 14&#x27;</span>, justification=<span class="string">&#x27;c&#x27;</span>, expand_x=<span class="literal">True</span>)],</span><br><span class="line">              [sg.Checkbox(<span class="string">&#x27;Use Custom Titlebar &amp; Menubar&#x27;</span>, use_custom_titlebar, enable_events=<span class="literal">True</span>, k=<span class="string">&#x27;-USE CUSTOM TITLEBAR-&#x27;</span>, p=<span class="number">0</span>)],</span><br><span class="line">              [sg.Col(layout_l, p=<span class="number">0</span>), sg.Col(layout_r, p=<span class="number">0</span>)]]</span><br><span class="line"></span><br><span class="line">    window = sg.Window(<span class="string">&#x27;The PySimpleGUI Element List&#x27;</span>, layout, finalize=<span class="literal">True</span>, right_click_menu=sg.MENU_RIGHT_CLICK_EDITME_VER_EXIT, keep_on_top=<span class="literal">True</span>, use_custom_titlebar=use_custom_titlebar)</span><br><span class="line"></span><br><span class="line">    window[<span class="string">&#x27;-PBAR-&#x27;</span>].update(<span class="number">30</span>)                                                     <span class="comment"># Show 30% complete on ProgressBar</span></span><br><span class="line">    window[<span class="string">&#x27;-GRAPH-&#x27;</span>].draw_image(data=sg.EMOJI_BASE64_HAPPY_JOY, location=(<span class="number">0</span>,<span class="number">50</span>))   <span class="comment"># Draw something in the Graph Element</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> window</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">window = make_window()</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    event, values = window.read()</span><br><span class="line">    <span class="comment"># sg.Print(event, values)</span></span><br><span class="line">    <span class="keyword">if</span> event == sg.WIN_CLOSED <span class="keyword">or</span> event == <span class="string">&#x27;Exit&#x27;</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> values[<span class="string">&#x27;-COMBO-&#x27;</span>] != sg.theme():</span><br><span class="line">        sg.theme(values[<span class="string">&#x27;-COMBO-&#x27;</span>])</span><br><span class="line">        window.close()</span><br><span class="line">        window = make_window()</span><br><span class="line">    <span class="keyword">if</span> event == <span class="string">&#x27;-USE CUSTOM TITLEBAR-&#x27;</span>:</span><br><span class="line">        use_custom_titlebar = values[<span class="string">&#x27;-USE CUSTOM TITLEBAR-&#x27;</span>]</span><br><span class="line">        sg.set_options(use_custom_titlebar=use_custom_titlebar)</span><br><span class="line">        window.close()</span><br><span class="line">        window = make_window()</span><br><span class="line">    <span class="keyword">if</span> event == <span class="string">&#x27;Edit Me&#x27;</span>:</span><br><span class="line">        sg.execute_editor(__file__)</span><br><span class="line">    <span class="keyword">elif</span> event == <span class="string">&#x27;Version&#x27;</span>:</span><br><span class="line">        sg.popup_scrolled(__file__, sg.get_versions(), keep_on_top=<span class="literal">True</span>, non_blocking=<span class="literal">True</span>)</span><br><span class="line">window.close()</span><br></pre></td></tr></table></figure>
+
+</details>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+    
+        <a href="/wiki/Python%E4%B9%8B%E7%A6%85/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">Python之禅</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            FengFeng &copy; 2023 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>
