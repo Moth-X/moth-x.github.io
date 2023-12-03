@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>PySimpleGui—Text&amp;Window | FengFeng的Wiki</title>
+    
+    
+        <meta name="keywords" content="PySimpleGui—Text&amp;Window" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Text元素Text - 在窗口中显示一些文本。通常是指一行文本。不过，文本也可以是多行。如果是多行，则没有滚动条。 以下是Text在PySimpleGui中的函数定义： 12345678910111213141516171819202122232425262728class Text(Element):    def __init__(self, text&#x3D;&#x27;&#x27;, size&#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PySimpleGui—Text&amp;Window">
+<meta property="og:url" content="http://moth-x.github.io/wiki/PySimpleGui%E2%80%94Text&Window/index.html">
+<meta property="og:site_name" content="FengFeng的Wiki">
+<meta property="og:description" content="Text元素Text - 在窗口中显示一些文本。通常是指一行文本。不过，文本也可以是多行。如果是多行，则没有滚动条。 以下是Text在PySimpleGui中的函数定义： 12345678910111213141516171819202122232425262728class Text(Element):    def __init__(self, text&#x3D;&#x27;&#x27;, size&#x3D;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-03T01:34:36.000Z">
+<meta property="article:modified_time" content="2023-12-03T02:16:41.970Z">
+<meta property="article:author" content="FengFeng">
+<meta name="twitter:card" content="summary">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="FengFeng的Wiki" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/images/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">FengFeng的Wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>分类</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Python修炼道
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            PySimpleGui—简易GUI构建
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/PySimpleGui%E7%AE%80%E4%BB%8B/">PySimpleGui简介</a></li>  <li class="file"><a href="/wiki/PySimpleGui%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/">PySimpleGui主要元素</a></li>  <li class="file active"><a href="/wiki/PySimpleGui%E2%80%94Text&Window/">PySimpleGui—Text&Window</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/Python%E4%B9%8B%E7%A6%85/">Python之禅</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            传送门
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/%E8%BD%AF%E4%BB%B6%E5%8F%8A%E5%B7%A5%E5%85%B7/">软件及工具</a></li>  <li class="file"><a href="/wiki/Office%E6%A8%A1%E6%9D%BF/">Office模板</a></li>  <li class="file"><a href="/wiki/Overleaf%E6%A8%A1%E6%9D%BF/">Overleaf模板</a></li>  <li class="file"><a href="/wiki/VScode%E6%8F%92%E4%BB%B6/">VScode插件</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/Welcome/">Welcome</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-PySimpleGui—Text&amp;Window" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Python%E4%BF%AE%E7%82%BC%E9%81%93/">Python修炼道</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Python%E4%BF%AE%E7%82%BC%E9%81%93/PySimpleGui%E2%80%94%E7%AE%80%E6%98%93GUI%E6%9E%84%E5%BB%BA/">PySimpleGui—简易GUI构建</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/PySimpleGui%E2%80%94Text&Window/">
+            <time datetime="2023-12-03T01:34:36.000Z" itemprop="datePublished">2023-12-03</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/FengFeng/Wiki-site/raw/writing/source/_posts/PySimpleGui—Text&amp;Window.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/FengFeng/Wiki-site/edit/writing/source/_posts/PySimpleGui—Text&amp;Window.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/FengFeng/Wiki-site/commits/writing/source/_posts/PySimpleGui—Text&amp;Window.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            PySimpleGui—Text&amp;Window
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">文章目录</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Text%E5%85%83%E7%B4%A0"><span class="toc-number">1.</span> <span class="toc-text">Text元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Window%E5%85%83%E7%B4%A0"><span class="toc-number">2.</span> <span class="toc-text">Window元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Demo1-1%EF%BC%9AHello-World"><span class="toc-number">3.</span> <span class="toc-text">Demo1.1：Hello World</span></a></li></ol>
+                </div>
+            
+        
+        
+            <h2 id="Text元素"><a href="#Text元素" class="headerlink" title="Text元素"></a>Text元素</h2><p>Text - 在窗口中显示一些文本。通常是指一行文本。不过，文本也可以是多行。如果是多行，则没有滚动条。</p>
+<p>以下是Text在PySimpleGui中的函数定义：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Text</span>(<span class="title class_ inherited__">Element</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, text=<span class="string">&#x27;&#x27;</span>, size=(<span class="params"><span class="literal">None</span>, <span class="literal">None</span></span>), s=(<span class="params"><span class="literal">None</span>, <span class="literal">None</span></span>), auto_size_text=<span class="literal">None</span>, click_submits=<span class="literal">False</span>, enable_events=<span class="literal">False</span>,</span></span><br><span class="line"><span class="params">    relief=<span class="literal">None</span>, font=<span class="literal">None</span>, text_color=<span class="literal">None</span>, background_color=<span class="literal">None</span>, border_width=<span class="literal">None</span>, justification=<span class="literal">None</span>, pad=<span class="literal">None</span>, p=<span class="literal">None</span>, key=<span class="literal">None</span>,</span></span><br><span class="line"><span class="params">    k=<span class="literal">None</span>, right_click_menu=<span class="literal">None</span>, expand_x=<span class="literal">False</span>, expand_y=<span class="literal">False</span>, grab=<span class="literal">None</span>, tooltip=<span class="literal">None</span>, visible=<span class="literal">True</span>, metadata=<span class="literal">None</span></span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># text： 要显示的文本。可包含 /n 以实现多行显示。 将参数（可选）转换为字符串</span></span><br><span class="line">    <span class="comment"># size: (w, h) w=字宽，h=行高。如果提供的是一个 int 而不是一个 tuple，那么高度将自动设置为 1</span></span><br><span class="line">    <span class="comment"># s：与 size 参数相同。 这是一个别名。如果两个参数都被设置，则使用被设置的参数。如果两个都设置了，则使用 size 参数</span></span><br><span class="line">    <span class="comment"># :auto_size_text：如果设置为 True，文本元素的大小将根据 &quot;text &quot;参数中提供的字符串调整。</span></span><br><span class="line">    <span class="comment"># click_submits：请勿使用。仅列出用于向后兼容 - 使用 enable_events 代替</span></span><br><span class="line">    <span class="comment"># enable_events：打开特定元素事件。文本事件在点击文本时发生</span></span><br><span class="line">    <span class="comment"># relief：文本周围的浮雕样式。值与进度表浮雕值相同。应该是以 &quot;RELIEF_&quot;开头定义的常量 - RELIEF_RAISED、RELIEF_SUNKEN、RELIEF_FLAT、RELIEF_RIDGE、RELIEF_GROOVE、RELIEF_SOLID</span></span><br><span class="line">    <span class="comment"># font：指定字体系列、大小等。元组或单个字符串格式为 &quot;name size styles&quot;。样式：斜体 * 罗马体 粗体 正常下划线 粗体</span></span><br><span class="line">    <span class="comment"># text_color：文本颜色</span></span><br><span class="line">    <span class="comment"># background_color：背景颜色</span></span><br><span class="line">    <span class="comment"># border_width：边框的像素数（如果使用浮雕的话）</span></span><br><span class="line">    <span class="comment"># justification：字符串在 size 提供的空间内的对齐方式。有效选项 = `左`、`右`、`中`。</span></span><br><span class="line">    <span class="comment"># pad：元素周围的填充量，单位为像素（左/右，上/下）或（（左，右），（上，下））或一个 int。如果是 int，则转换为一个元组（int, int）</span></span><br><span class="line">    <span class="comment"># p：与 pad 参数相同。 这是一个别名。如果两个参数都被设置，则使用被设置的参数。如果两个都设置了，则使用 pad 参数</span></span><br><span class="line">    <span class="comment"># key：与 window.find_element 和返回值一起使用，用于唯一标识该元素，以唯一标识该元素</span></span><br><span class="line">    <span class="comment"># k：与 key 相同。您可以使用 k 或 key。无论设置了哪一个，都将被使用。</span></span><br><span class="line">    <span class="comment"># right_click_menu： 右键单击该元素时要显示的菜单项列表。具体格式请参见用户文档。</span></span><br><span class="line">    <span class="comment"># expand_x： 如果为 True，元素将自动向 X 方向展开以填充可用空间</span></span><br><span class="line">    <span class="comment"># expand_y： 如果为 True，元素将自动向 Y 方向扩展以填充可用空间</span></span><br><span class="line">    <span class="comment"># grab： 如果为 True，可以抓取该元素并移动窗口。默认为 False</span></span><br><span class="line">    <span class="comment"># tooltip：文本，当鼠标悬停在元素上时显示</span></span><br><span class="line">    <span class="comment"># visible：设置元素的可见状态</span></span><br><span class="line">    <span class="comment"># metadata：元数据： 用户元数据，可以设置为任何内容</span></span><br></pre></td></tr></table></figure>
+<h2 id="Window元素"><a href="#Window元素" class="headerlink" title="Window元素"></a>Window元素</h2><p>Window - 表示一个窗口</p>
+<p>以下是Window在PySimpleGui中的函数定义：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Window</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, title, layout=<span class="literal">None</span>, default_element_size=<span class="literal">None</span>,</span></span><br><span class="line"><span class="params">                 default_button_element_size=(<span class="params"><span class="literal">None</span>, <span class="literal">None</span></span>),</span></span><br><span class="line"><span class="params">                 auto_size_text=<span class="literal">None</span>, auto_size_buttons=<span class="literal">None</span>, location=(<span class="params"><span class="literal">None</span>, <span class="literal">None</span></span>), relative_location=(<span class="params"><span class="literal">None</span>, <span class="literal">None</span></span>), size=(<span class="params"><span class="literal">None</span>, <span class="literal">None</span></span>),</span></span><br><span class="line"><span class="params">                 element_padding=<span class="literal">None</span>, margins=(<span class="params"><span class="literal">None</span>, <span class="literal">None</span></span>), button_color=<span class="literal">None</span>, font=<span class="literal">None</span>,</span></span><br><span class="line"><span class="params">                 progress_bar_color=(<span class="params"><span class="literal">None</span>, <span class="literal">None</span></span>), background_color=<span class="literal">None</span>, border_depth=<span class="literal">None</span>, auto_close=<span class="literal">False</span>,</span></span><br><span class="line"><span class="params">                 auto_close_duration=DEFAULT_AUTOCLOSE_TIME, icon=<span class="literal">None</span>, force_toplevel=<span class="literal">False</span>,</span></span><br><span class="line"><span class="params">                 alpha_channel=<span class="literal">None</span>, return_keyboard_events=<span class="literal">False</span>, use_default_focus=<span class="literal">True</span>, text_justification=<span class="literal">None</span>,</span></span><br><span class="line"><span class="params">                 no_titlebar=<span class="literal">False</span>, grab_anywhere=<span class="literal">False</span>, grab_anywhere_using_control=<span class="literal">True</span>, keep_on_top=<span class="literal">None</span>, resizable=<span class="literal">False</span>, disable_close=<span class="literal">False</span>,</span></span><br><span class="line"><span class="params">                 disable_minimize=<span class="literal">False</span>, right_click_menu=<span class="literal">None</span>, transparent_color=<span class="literal">None</span>, debugger_enabled=<span class="literal">True</span>,</span></span><br><span class="line"><span class="params">                 right_click_menu_background_color=<span class="literal">None</span>, right_click_menu_text_color=<span class="literal">None</span>, right_click_menu_disabled_text_color=<span class="literal">None</span>,</span></span><br><span class="line"><span class="params">                 right_click_menu_selected_colors=(<span class="params"><span class="literal">None</span>, <span class="literal">None</span></span>),</span></span><br><span class="line"><span class="params">                 right_click_menu_font=<span class="literal">None</span>, right_click_menu_tearoff=<span class="literal">False</span>,</span></span><br><span class="line"><span class="params">                 finalize=<span class="literal">False</span>, element_justification=<span class="string">&#x27;left&#x27;</span>, ttk_theme=<span class="literal">None</span>, use_ttk_buttons=<span class="literal">None</span>, modal=<span class="literal">False</span>, enable_close_attempted_event=<span class="literal">False</span>,</span></span><br><span class="line"><span class="params">                 titlebar_background_color=<span class="literal">None</span>, titlebar_text_color=<span class="literal">None</span>, titlebar_font=<span class="literal">None</span>, titlebar_icon=<span class="literal">None</span>,</span></span><br><span class="line"><span class="params">                 use_custom_titlebar=<span class="literal">None</span>, scaling=<span class="literal">None</span>,</span></span><br><span class="line"><span class="params">                 sbar_trough_color=<span class="literal">None</span>, sbar_background_color=<span class="literal">None</span>, sbar_arrow_color=<span class="literal">None</span>, sbar_width=<span class="literal">None</span>, sbar_arrow_width=<span class="literal">None</span>,</span></span><br><span class="line"><span class="params">                 sbar_frame_color=<span class="literal">None</span>, sbar_relief=<span class="literal">None</span>,metadata=<span class="literal">None</span></span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># title：标题：将显示在标题栏和任务栏上的标题</span></span><br><span class="line">    <span class="comment"># layout（布局窗口的布局。也可在布局方法中指定</span></span><br><span class="line">    <span class="comment"># default_element_size：该窗口中所有元素的大小，以字符（宽）和行（高）为单位</span></span><br><span class="line">    <span class="comment"># default_button_element_size：此窗口中所有按钮元素的大小（宽、高），单位为字符数（宽）和行（高</span></span><br><span class="line">    <span class="comment"># auto_size_text（自动调整文字大小如果窗口中元素的大小应与文本长度相等，则设置为True。</span></span><br><span class="line">    <span class="comment"># auto_size_buttons：如果此窗口中按钮的大小应与文本完全匹配，则设置为True。</span></span><br><span class="line">    <span class="comment"># relative_location：（x,y）相对于窗口默认位置的位置，单位为像素。通常情况下，窗口会居中。该位置相对于窗口创建时的位置。注意，它们可以是负数。</span></span><br><span class="line">    <span class="comment"># location：（x,y）窗口左上角在屏幕上的位置，单位为像素。默认为位于屏幕中央。</span></span><br><span class="line">    <span class="comment"># size：（宽度，高度）窗口的尺寸，单位为像素。通常情况下，窗口会根据内容自动调整大小，而不是由用户设置绝对大小。尽量不要设置此值。否则会有内容被截断等风险。让布局来决定窗口大小吧</span></span><br><span class="line">    <span class="comment"># element_padding：窗口中元素周围的默认填充量（左/右、上/下）或（（左、右）、（上、下）），或一个int。如果是int，则转换为一个元组（int,int）</span></span><br><span class="line">    <span class="comment"># margins：（左/右、上/下）在显示元素之前，在窗口边框内边缘留出的像素数。</span></span><br><span class="line">    <span class="comment"># button_color：窗口中所有按钮的默认按钮颜色</span></span><br><span class="line">    <span class="comment"># font：指定字体系列、大小等。元组或单个字符串格式为&quot;名称大小样式&quot;。样式：斜体*罗马体粗体正常下划线粗体</span></span><br><span class="line">    <span class="comment"># progress_bar_color：（条形图颜色、背景颜色）设置窗口中所有进度条的默认颜色</span></span><br><span class="line">    <span class="comment"># background_color：背景颜色</span></span><br><span class="line">    <span class="comment"># border_depth：边框深度：窗口中所有元素的默认边框深度（宽度</span></span><br><span class="line">    <span class="comment"># auto_close：自动关闭：如果为True，窗口将自动关闭</span></span><br><span class="line">    <span class="comment"># auto_close_duration：自动关闭持续时间：关闭窗口前的等待秒数</span></span><br><span class="line">    <span class="comment"># icon：可以是文件名或Base64值。对于Windows，如果是文件名，则必须是ICO格式。对于Linux，必须不是ICO格式。最便携的方法是使用PNG文件的Base64值。这适用于所有操作系统</span></span><br><span class="line">    <span class="comment"># force_toplevel：如果为True，将使该窗口跳过隐藏主窗口的正常使用</span></span><br><span class="line">    <span class="comment"># alpha_channel（阿尔法通道）：设置窗口的不透明度。0=不可见1=完全可见。0和1之间的值会在某些环境中产生半透明窗口（RaspberryPi始终将此值设为1，且无法更改。</span></span><br><span class="line">    <span class="comment"># return_keyboard_events：如果为True，键盘上的按键将作为读取调用的事件返回</span></span><br><span class="line">    <span class="comment"># use_default_focus：如果为True，将使用默认焦点算法将焦点设置为&quot;正确&quot;元素</span></span><br><span class="line">    <span class="comment"># text_justification：窗口中所有文本元素的默认文本对齐方式</span></span><br><span class="line">    <span class="comment"># :typetext_justification:&#x27;left&#x27;|&#x27;right&#x27;|&#x27;center</span></span><br><span class="line">    <span class="comment"># no_titlebar：如果为true，窗口上将不显示标题栏或框架。这意味着无法最小化窗口，窗口也不会显示在任务栏上</span></span><br><span class="line">    <span class="comment"># grab_anywhere：如果为True，则可以使用鼠标点击和拖动来移动窗口。除了某些系统上的输入框外，窗口的几乎所有位置都可以移动</span></span><br><span class="line">    <span class="comment"># grab_anywhere_using_control：如果设置为True，则可以使用CONTROL键+鼠标左键单击并拖动来移动窗口。默认值为TRUE。与普通的随处抓取不同，它适用于所有元素。</span></span><br><span class="line">    <span class="comment"># keep_on_top（保持在顶部）：如果为True，创建的窗口将位于屏幕上所有其他窗口的顶部。如果使用该参数创建了另一个窗口，则该窗口可能会被向下移动。</span></span><br><span class="line">    <span class="comment"># resizable：如果为True，则允许用户调整窗口大小。请注意，并非所有元素在调整大小时都会改变大小或位置。</span></span><br><span class="line">    <span class="comment"># disable_close（关闭）：如果为True，窗口右上角的X按钮将不起作用。请谨慎使用，并始终为用户留出退路。</span></span><br><span class="line">    <span class="comment"># disable_minimize：如果为True，用户将无法最小化窗口。有利于占据整个屏幕并保持这种状态。</span></span><br><span class="line">    <span class="comment"># right_click_menu：右键单击该元素时要显示的菜单项列表。具体格式请参见用户文档。</span></span><br><span class="line">    <span class="comment"># transparent_color（透明色）：窗口中带有此颜色的任何部分都将完全透明。您甚至可以通过这些位置点击该窗口下的窗口。</span></span><br><span class="line">    <span class="comment"># debugger_enabled（已启用调试器）：如果为True，则将启用内部调试器</span></span><br><span class="line">    <span class="comment"># right_click_menu_background_color:右键菜单的背景颜色</span></span><br><span class="line">    <span class="comment"># right_click_menu_text_color:右键菜单的文本颜色</span></span><br><span class="line">    <span class="comment"># right_click_menu_disabled_text_color:禁用右键菜单项的文本颜色</span></span><br><span class="line">    <span class="comment"># right_click_menu_selected_colors：选定项目的文本和背景颜色。可以是一个元组，也可以是一个颜色字符串。如果只想设置背景，可以是单一颜色。通常是一个元组，但也可以是简化的双色字符串&quot;前景背景&quot;。如果只想设置背景，可以是单一颜色。</span></span><br><span class="line">    <span class="comment"># right_click_menu_font：右键菜单的字体</span></span><br><span class="line">    <span class="comment"># right_click_menu_tearoff:如果为True，则所有右键菜单都可以撕掉</span></span><br><span class="line">    <span class="comment"># finalize（最终确定如果为True，将调用Finalize方法。使用此方法比使用.Finalize方法更简洁</span></span><br><span class="line">    <span class="comment"># element_justification：窗口本身中的所有元素都将具有该理由，&quot;左&quot;、&quot;右&quot;、&quot;中&quot;均为有效值</span></span><br><span class="line">    <span class="comment"># ttk_theme：设置窗口的tkinterttk&quot;主题&quot;。默认值=DEFAULT_TTK_THEME。将所有ttk部件默认设置为该主题</span></span><br><span class="line">    <span class="comment"># use_ttk_buttons：影响窗口中的所有按钮。True=使用ttk按钮。False=不使用ttk按钮。无=仅在Mac上使用ttk按钮</span></span><br><span class="line">    <span class="comment"># modal（模态）：如果为True，则该窗口将是用户在关闭前唯一可以与之交互的窗口</span></span><br><span class="line">    <span class="comment"># enable_close_attempted_event：如果为True，则点击&quot;X&quot;后窗口不会关闭。取而代之的是从window.read返回的事件WINDOW_CLOSE_ATTEMPTED_EVENT</span></span><br><span class="line">    <span class="comment"># titlebar_background_color:如果使用use_custom_titlebar指示自定义标题栏，则使用此颜色作为背景色</span></span><br><span class="line">    <span class="comment"># sbar_frame_color:滚动条周围边框的颜色（仅适用于某些ttk主题）</span></span><br><span class="line">    <span class="comment"># sbar_relief：用于滚动条&quot;拇指&quot;（滑动时抓取的部分）的滚动条浮雕。应该是以&quot;RELIEF_&quot;开头定义的常量-RELIEF_RAISED、RELIEF_SUNKEN、RELIEF_FLAT、RELIEF_RIDGE、RELIEF_GROOVE、RELIEF_SOLID</span></span><br><span class="line">    <span class="comment"># metadata：用户元数据，可设置为任何内容</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Demo1-1：Hello-World"><a href="#Demo1-1：Hello-World" class="headerlink" title="Demo1.1：Hello World"></a>Demo1.1：Hello World</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> PySimpleGUI <span class="keyword">as</span> sg</span><br><span class="line"></span><br><span class="line">Text = sg.Text(<span class="string">&#x27;Hello World!&#x27;</span>) <span class="comment"># 创建一个文本元素</span></span><br><span class="line">layout = [[Text]] <span class="comment"># 创建布局</span></span><br><span class="line"></span><br><span class="line">window = sg.Window(<span class="string">&#x27;Window Title&#x27;</span>, layout) <span class="comment"># 创建窗口</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>: <span class="comment"># 事件循环并获取输入值</span></span><br><span class="line">    event, values = window.read()</span><br><span class="line">    <span class="keyword">if</span> event <span class="keyword">in</span> (<span class="literal">None</span>, <span class="string">&#x27;Cancel&#x27;</span>):   <span class="comment"># 如果用户关闭窗口或点击`Cancel`</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">window.close() <span class="comment"># 跳出循环后关闭窗口</span></span><br></pre></td></tr></table></figure>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/VScode%E6%8F%92%E4%BB%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    VScode插件
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/PySimpleGui%E4%B8%BB%E8%A6%81%E5%85%83%E7%B4%A0/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">PySimpleGui主要元素</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            FengFeng &copy; 2023 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>
